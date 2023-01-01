@@ -172,7 +172,13 @@ section{
    color:var(--black);
 }
 
-.header .flex .logo span{
+
+.header .flex .logo img{
+   height:60px;
+    width: 60px; 
+   margin-bottom:-20px;
+    margin-top:-15px;
+    margin-left: -40px;
    color:var(--main-color);
 }
 
@@ -190,7 +196,7 @@ section{
 
 .header .flex .icons > *{
    margin-left: 1rem;
-   font-size: 2.5rem;
+   font-size: 1.7rem;
    cursor: pointer;
    color:var(--black);
 }
