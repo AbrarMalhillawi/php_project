@@ -190,12 +190,38 @@ if(isset($_GET['delete'])){
       $select_products->execute();
       if($select_products->rowCount() > 0){
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
+            $i=0;
    ?>
    <div class="box">
       <img src="../uploaded_img/<?= $fetch_products['image']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?></div>
-      <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
+
+
+      <?php if ($fetch_products['is_sale'] == 1){ ?>
+      <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_products['price']; ?></del><ins> $<?=$fetch_products['price_discount'];?></ins> </span></div>
+      <?php } else { ?>
+         <div class="name"><?= $fetch_products['price']; ?></div> <?php } ?>
+
+         
       <div class="details"><span><?= $fetch_products['details']; ?></span></div>
+
+            <?php $product_category = $conn->prepare("SELECT * 
+                                        FROM `products`
+                                        INNER JOIN `category` ON products.category_id = category.category_id");
+                  $product_category->execute();
+                  if($product_category->rowCount() > 0){
+                     while($fetch_product_category = $product_category->fetch(PDO::FETCH_ASSOC)){ 
+                        if($i==0 && $fetch_products['category_id'] == $fetch_product_category['category_id'] ){
+                        $i++;
+            ?>
+                        <div class="details"><span>Category : <?= $fetch_product_category['category_name']; ?></span>
+      </div>
+            <?php 
+                        }
+                     }
+                  }
+            ?>
+
       <div class="flex-btn">
          <!-- بدي اعمل هسا كبستين او رابطين عشان المسح و التعديل و بدي ابعث الايي ديه مع الروابط تبعت هاي الكبسات عشان  -->         
          <a href="update_product.php?update=<?= $fetch_products['product_id']; ?>" class="option-btn">update</a>
