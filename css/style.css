@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 
 :root{
-   --main-color:#2980b9;
-   --orange:#D2B1D2;
-   --red:#e74c3c;
+   --main-color:#C6861A;
+   --orange:#ae8fae;
+   /* --red:#e74c3c; */
    --black:#333;
+   --gray:rgb(149, 147, 147);
    --white:#fff;
-   --light-color:#666;
+   --light-color:#b0a6a6;
    --light-bg:#eee;
    --border:.2rem solid var(--black);
    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
@@ -81,9 +82,10 @@ section{
 .option-btn:hover{
    background-color: var(--black);
 }
-
+/* --main-color #2980b9   #8d082f*/
 .btn{
-   background-color: var(--main-color);
+   background-color:  var(--main-color);
+  
 }
 
 .option-btn{
@@ -155,9 +157,10 @@ section{
 .header{
    position: sticky;
    top:0; left:0; right:0;
-   background-color: var(--white);
+   background-color: var(--black);
    box-shadow: var(--box-shadow);
    z-index: 1000;
+   
 }
 
 .header .flex{
@@ -182,10 +185,15 @@ section{
    color:var(--main-color);
 }
 
+.header .flex .logo span{
+   color:var(--main-color);
+}
+
+
 .header .flex .navbar a{
    margin:0 1rem;
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
 }
 
 .header .flex .navbar a:hover{
@@ -198,7 +206,7 @@ section{
    margin-left: 1rem;
    font-size: 1.7rem;
    cursor: pointer;
-   color:var(--black);
+   color:var(--white);
 }
 
 .header .flex .icons > *:hover{
@@ -238,8 +246,9 @@ section{
    display: none;
 }
 
+
 .home-bg{
-   background:url(../images/home-bg.png) no-repeat;
+   background-color:#C8BCA8 ;
    background-size: cover;
    background-position: center;
 }
@@ -248,8 +257,8 @@ section{
    display: flex;
    align-items: center;
    flex-wrap: wrap;
-   gap:1.5rem;
-   padding-bottom: 6rem;
+   gap:2rem;
+   padding-bottom: 5rem;
    padding-top: 2rem;
    user-select: none;
 }
@@ -268,16 +277,28 @@ section{
    flex:1 1 40rem;
 }
 
-.home-bg .home .slide .content span{
-   font-size: 2rem;
-   color:var(--white);
+.home-bg .home .slide .content h2{
+   font-size: 3rem;
+   color:var(--black);
 }
-
+/* -------------------------------------
+------------------------------------- */
+/* #fa9f45 */
+/* #af3cbd */
+.home-bg .home .slide .content h1{
+   margin-left:-3px ;
+   font-size: 6rem;
+   width: 130%;
+   color:var(--black);
+   text-transform: uppercase;
+}
 .home-bg .home .slide .content h3{
    margin-top: 1rem;
-   font-size: 4rem;
-   color:var(--white);
+   font-size: 5rem;
+   font-weight: bold;
+   color:var(--black);
    text-transform: uppercase;
+
 }
 
 .home-bg .home .slide .content .btn{
@@ -289,13 +310,14 @@ section{
    background-color: var(--main-color);
 }
 
+
 .category .slide{
+   margin-top: 5rem;
    margin-bottom: 5rem;
    box-shadow: var(--box-shadow);
-   border:var(--border);
    text-align: center;
-   padding:2rem;
-   background: var(--white);
+   padding:1rem;
+   background: var(--gray);
    border-radius: .5rem;
 }
 
@@ -303,25 +325,26 @@ section{
    background-color: var(--black);
 }
 
-.category .slide:hover img{
+/* .category .slide:hover img{
    filter:invert();
-}
+} */
 
 .category .slide:hover h3{
    color:var(--white);
 }
 
 .category .slide img{
-   height: 7rem;
+   height: 20rem;
    width: 100%;
    object-fit: contain;
-   margin-bottom: 1rem;
+   margin-bottom: 0rem;
    user-select: none;
 }
 
 .category .slide h3{
-   font-size: 2rem;
+   font-size: 3rem;
    color:var(--black);
+   font-weight: bold;
    user-select: none;
 }
 
@@ -955,7 +978,7 @@ section{
 
 .footer .grid .box h3{
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
    margin-bottom: 2rem;
    text-transform: capitalize;
 }
