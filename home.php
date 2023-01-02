@@ -55,38 +55,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
       
          <div class="swiper-wrapper">
 
-            <div class="swiper-slide slide">
-               <div class="image">
-                  <img src="./images/home-img-1.png" alt="">
-               </div>
-               <div class="content">
-                  <span>upto 50% off</span>
-                  <h3>latest smartphones</h3>
-                  <a href="shop.php" class="btn">shop now</a>
-               </div>
-            </div>
+   <!-- بداية كود السلايدر لعرض الصور  -->
+   <div class="swiper-slide slide" class="pic">
+      <div class="content">
+        <h1>Welcome In Art Hand Craft Website</h1>
+        <h2>Creativity Without Limits</h2>
+        <a href="shop.php" class="btn">shop now</a>
+      </div>
+      <div class="image">
+        <img src="images/home-img-1.png" alt="">
+      </div>
+   </div>
 
-            <div class="swiper-slide slide">
-               <div class="image">
-                  <img src="images/home-img-2.png" alt="">
-               </div>
-               <div class="content">
-                  <span>upto 50% off</span>
-                  <h3>latest watches</h3>
-                  <a href="shop.php" class="btn">shop now</a>
-               </div>
-            </div>
-
-            <div class="swiper-slide slide">
-               <div class="image">
-                  <img src="images/home-img-3.png" alt="">
-               </div>
-               <div class="content">
-                  <span>upto 50% off</span>
-                  <h3>latest headsets</h3>
-                  <a href="shop.php" class="btn">shop now</a>
-               </div>
-            </div>
 
          </div>
 
@@ -100,6 +80,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
 
 
+<!-- start for category  -->
+
 <section class="category">
 
    <h1 class="heading">shop by category</h1>
@@ -108,26 +90,36 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
    <div class="swiper-wrapper">
 
-   <a href="category.php?category=1" class="swiper-slide slide">
-      <img src="images/icon-1.png" alt="">
-      <h3>Abdelmajied</h3>
+   <a href="category.php?category=8" class="swiper-slide slide">
+      <img src="images/resincateg.png" alt="">
+      <h3>RESIN ART</h3>
    </a>
 
-   <a href="category.php?category=4" class="swiper-slide slide">
-      <img src="images/icon-2.png" alt="">
-      <h3>admin</h3>
+   <a href="category.php?category=6" class="swiper-slide slide">
+      <img src="images/qullingCateg.png" alt="">
+      <h3>QULLING ART</h3>
    </a>
 
-   <a href="category.php?category=5" class="swiper-slide slide">
-      <img src="images/icon-3.png" alt="">
-      <h3>asem</h3>
+   <a href="category.php?category=9" class="swiper-slide slide">
+      <img src="images/stringcate.png" alt="">
+      <h3>STRING ART</h3>
    </a>
+
+   <a href="category.php?category=7" class="swiper-slide slide">
+      <img src="images/acrylicCateg.png" alt="">
+      <h3>ACRYLIC ART</h3>
+   </a>
+
+   </div>
+
 
    <div class="swiper-pagination"></div>
 
    </div>
 
 </section>
+
+<!-- start for product  -->
 
 <section class="home-products">
 
@@ -188,7 +180,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
             <div class="name" style="color:green;">$<?= $fetch_product['price']; ?></div> <?php } ?>
 
-         <?php if ($fetch_product['category_id'] != '1'){?>
+         <?php if ($fetch_product['category_id'] != '9'){?>
+
 
             <input type="number" name="quantity" class="qty" min="1" max="99" value="1">
 
