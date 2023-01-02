@@ -37,23 +37,21 @@ if(!isset($admin_id)){
 
       <div class="box">
          <h3>welcome!</h3>
-         <p><?= $fetch_profile['name']; ?></p>
          <a href="update_profile.php" class="btn">update profile</a>
       </div>
 
       <div class="box">
          <?php
             $total_completes = 0;
-            $select_completes = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
-            $select_completes->execute(['completed']);
+            $select_completes = $conn->prepare("SELECT * FROM `orders`");
+            $select_completes->execute();
             if($select_completes->rowCount() > 0){
                while($fetch_completes = $select_completes->fetch(PDO::FETCH_ASSOC)){
                   $total_completes += $fetch_completes['total_price'];
                }
             }
          ?>
-         <h3><span>$</span><?= $total_completes; ?><span>/-</span></h3>
-         <p>completed orders</p>
+         <h3><span>$</span><?= $total_completes; ?><span></span></h3>
          <a href="placed_orders.php" class="btn">see orders</a>
       </div>
 
@@ -64,7 +62,6 @@ if(!isset($admin_id)){
             $number_of_products = $select_products->rowCount()
          ?>
          <h3><?= $number_of_products; ?></h3>
-         <p>products added</p>
          <a href="products.php" class="btn">see products</a>
       </div>
 
@@ -75,7 +72,6 @@ if(!isset($admin_id)){
             $number_of_products = $select_products->rowCount()
          ?>
          <h3><?= $number_of_products; ?></h3>
-         <p>saled products added</p>
          <a href="sales.php" class="btn">see sales</a>
       </div>
 
@@ -86,7 +82,6 @@ if(!isset($admin_id)){
             $number_of_category = $select_category->rowCount()
          ?>
          <h3><?= $number_of_category; ?></h3>
-         <p>category added</p>
          <a href="category.php" class="btn">see category</a>
       </div>
 
@@ -97,7 +92,6 @@ if(!isset($admin_id)){
             $number_of_users = $select_users->rowCount()
          ?>
          <h3><?= $number_of_users; ?></h3>
-         <p>normal users</p>
          <a href="users_accounts.php" class="btn">see users</a>
       </div>
 
@@ -108,7 +102,6 @@ if(!isset($admin_id)){
             $number_of_admins = $select_admins->rowCount()
          ?>
          <h3><?= $number_of_admins; ?></h3>
-         <p>admin users</p>
          <a href="admin_accounts.php" class="btn">see admins</a>
       </div>
 

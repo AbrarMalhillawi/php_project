@@ -2,15 +2,15 @@
 
 :root{
    --main-color:#C6861A;
-   --orange:#ae8fae;
-   /* --red:#e74c3c; */
+   --orange:#7d7d7d;
+   --red:#ED553B;
    --black:#333;
    --gray:rgb(149, 147, 147);
    --white:#fff;
    --light-color:#b0a6a6;
    --light-bg:#eee;
    --border:.2rem solid var(--black);
-   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --box-shadow: 10px 10px 8px -3px rgba(12, 12, 12, 0.1), 10px 10px 8px #9e9292;
 }
 
 *{
@@ -58,6 +58,7 @@ section{
    font-size: 4rem;
    color:var(--black);
    margin-bottom: 2rem;
+   margin-top: 2rem;
    text-align: center;
    text-transform: uppercase;
 }
@@ -81,10 +82,12 @@ section{
 .delete-btn:hover,
 .option-btn:hover{
    background-color: var(--black);
+   color: var(--white);
 }
 /* --main-color #2980b9   #8d082f*/
 .btn{
    background-color:  var(--main-color);
+
   
 }
 
@@ -177,12 +180,12 @@ section{
 
 
 .header .flex .logo img{
-   height:60px;
+    height:60px;
     width: 60px; 
-   margin-bottom:-20px;
+    margin-bottom:-20px;
     margin-top:-15px;
     margin-left: -40px;
-   color:var(--main-color);
+    color:var(--main-color);
 }
 
 .header .flex .logo span{
@@ -281,10 +284,7 @@ section{
    font-size: 3rem;
    color:var(--black);
 }
-/* -------------------------------------
-------------------------------------- */
-/* #fa9f45 */
-/* #af3cbd */
+
 .home-bg .home .slide .content h1{
    margin-left:-3px ;
    font-size: 6rem;
@@ -314,7 +314,6 @@ section{
 .category .slide{
    margin-top: 5rem;
    margin-bottom: 5rem;
-   box-shadow: var(--box-shadow);
    text-align: center;
    padding:1rem;
    background: var(--gray);
@@ -325,9 +324,6 @@ section{
    background-color: var(--black);
 }
 
-/* .category .slide:hover img{
-   filter:invert();
-} */
 
 .category .slide:hover h3{
    color:var(--white);
@@ -351,9 +347,9 @@ section{
 .home-products .slide{
    position: relative;
    padding:2rem;
-   border-radius: .5rem;
-   border:var(--border);
-   background-color: var(--white);
+   /* border-radius:3rem; */
+   /* border:var(--border); */
+   /* background-color: var(--white); */
    box-shadow: var(--box-shadow);
    margin-bottom: 5rem;
    overflow: hidden;
