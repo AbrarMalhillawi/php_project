@@ -10,7 +10,19 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-// include 'components/wishlist_cart.php';
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
+   $product_id = $_POST['product_id'];
+   $product_name = $_POST['name'];
+   $product_price = $_POST['price'];
+   $product_image = $_POST['image'];
+   $product_quantity = $_POST['quantity'];
+
+   $send_to_cart = $conn->prepare("INSERT INTO `cart` (user_id , product_id , name , price , image , quantity)
+                                    VALUES (? , ? , ? , ?, ? , ?)"); 
+   $send_to_cart->execute([$user_id , $product_id , $product_name , $product_price, $product_image, $product_quantity]);
+
+}
+
 
 ?>
 
@@ -28,10 +40,8 @@ if(isset($_SESSION['user_id'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <!-- <link rel="stylesheet" href="css/style.css"> -->
-<style>
-   <?php  include "css/style.css "  ?>
-   </style>
+   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
    
@@ -39,85 +49,57 @@ if(isset($_SESSION['user_id'])){
 
 <div class="home-bg">
 
-<section class="home">
+   <section class="home">
 
-   <div class="swiper home-slider">
-   
-   <div class="swiper-wrapper">
-<!-- بداية كود السلايدر لعرض الصور  -->
-   <div class="swiper-slide slide" class="pic">
-      <div class="content">
-        <h1>Welcome In Art Hand Craft Website</h1>
-        <h2>Creativity Without Limits</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/home-img-1.png" alt="">
-      </div>
-   </div>
+      <div class="swiper home-slider">
+      
+         <div class="swiper-wrapper">
 
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="./images/home-img-1.png" alt="">
+               </div>
+               <div class="content">
+                  <span>upto 50% off</span>
+                  <h3>latest smartphones</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
 
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="images/home-img-2.png" alt="">
+               </div>
+               <div class="content">
+                  <span>upto 50% off</span>
+                  <h3>latest watches</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
 
-   <div class="swiper-slide slide">
-      <div class="content">
-        <h3>Latest Resin Arts</h3>
-        <h2>upto 50% off</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/resin1.png" alt="">
-      </div>
-   </div>
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="images/home-img-3.png" alt="">
+               </div>
+               <div class="content">
+                  <span>upto 50% off</span>
+                  <h3>latest headsets</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
 
-   <div class="swiper-slide slide">
-         
-         <div class="content">
-            <h3>Latest String Arts</h3>
-            <h2>upto 50% off</h2>
-            <a href="shop.php" class="btn">shop now</a>
          </div>
-         <div class="image">
-            <img src="images/string1.png" alt="">
-         </div>
+
+         <div class="swiper-pagination"></div>
+
       </div>
 
-
-      <div class="swiper-slide slide">
-        
-         <div class="content">
-            <h3>Latest Quilling Art</h3>
-            <h2>upto 30% off</h2>
-            <a href="shop.php" class="btn">shop now</a>
-         </div>
-         <div class="image">
-            <img src="images/qulling3.png" alt="">
-         </div>
-      </div>
-
-      <div class="swiper-slide slide">
-      <div class="content">
-        <h3>Latest Acrylic Arts</h3>
-        <h2>upto 10% off</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/acrylic1.png" alt="">
-      </div>
-   </div>
-
-   </div>
-
-      <div class="swiper-pagination"></div>
-
-   </div>
-
-</section>
+   </section>
 
 </div>
 
 
 
-<!-- -->
 <section class="category">
 
    <h1 class="heading">shop by category</h1>
@@ -126,27 +108,20 @@ if(isset($_SESSION['user_id'])){
 
    <div class="swiper-wrapper">
 
-   <a href="category.php?category=RESIN" class="swiper-slide slide">
-      <img src="images/resincateg.png" alt="">
-      <h3>RESIN ART</h3>
+   <a href="category.php?category=1" class="swiper-slide slide">
+      <img src="images/icon-1.png" alt="">
+      <h3>Abdelmajied</h3>
    </a>
 
-   <a href="category.php?category=QULLING" class="swiper-slide slide">
-      <img src="images/qullingCateg.png" alt="">
-      <h3>QULLING ART</h3>
+   <a href="category.php?category=4" class="swiper-slide slide">
+      <img src="images/icon-2.png" alt="">
+      <h3>admin</h3>
    </a>
 
-   <a href="category.php?category=STRING" class="swiper-slide slide">
-      <img src="images/stringcate.png" alt="">
-      <h3>STRING ART</h3>
+   <a href="category.php?category=5" class="swiper-slide slide">
+      <img src="images/icon-3.png" alt="">
+      <h3>asem</h3>
    </a>
-
-   <a href="category.php?category=STRING" class="swiper-slide slide">
-      <img src="images/acrylicCateg.png" alt="">
-      <h3>ACRYLIC ART</h3>
-   </a>
-
-   </div>
 
    <div class="swiper-pagination"></div>
 
@@ -154,34 +129,75 @@ if(isset($_SESSION['user_id'])){
 
 </section>
 
-<!-- /////////start section home product ////////// -->
 <section class="home-products">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading">Sales Product</h1>
 
    <div class="swiper products-slider">
 
    <div class="swiper-wrapper">
 
    <?php
-     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6"); 
+     $select_products = $conn->prepare("SELECT * FROM `products` WHERE is_sale='1'"); 
      $select_products->execute();
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
+         $i=0;
    ?>
-   <form action="" method="post" class="swiper-slide slide">
-      <input type="hidden" name="pid" value="<?= $fetch_product['product_id']; ?>">
+   <form action="" method="post" class="swiper-slide slide" style="height:430px">
+      <input type="hidden" name="product_id" value="<?= $fetch_product['product_id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
-      <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
+      <?php 
+      if ($fetch_product['is_sale'] == 1){
+         ?>
+         <input type="hidden" name="price" value="<?=$fetch_product['price_discount'];?>">
+         <?php
+      } else {
+         ?>
+         <input type="hidden" name="price" value="<?=$fetch_product['price'];?>">
+         <?php
+      }
+      ?>
       <input type="hidden" name="image" value="<?= $fetch_product['image']; ?>">
       <a href="quick_view.php?pid=<?= $fetch_product['product_id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image']; ?>" alt="">
       <div class="name"><?= $fetch_product['name']; ?></div>
-      <div class="flex">
-         <div class="price"><span>$</span><?= $fetch_product['price']; ?></div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+      <?php $product_category = $conn->prepare("SELECT * 
+                                        FROM `products`
+                                        INNER JOIN `category` ON products.category_id = category.category_id");
+                  $product_category->execute();
+                  if($product_category->rowCount() > 0){
+                     while($fetch_product_category = $product_category->fetch(PDO::FETCH_ASSOC)){ 
+                        if($i==0 && $fetch_product['category_id'] == $fetch_product_category['category_id'] ){
+                        $i++;
+            ?>
+                        <div class="details" style="color : rgb(133, 132, 132); font-size:15px"><span>Category : <?= $fetch_product_category['category_name']; ?></span>
       </div>
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+            <?php 
+                        }
+                     }
+                  }
+            ?>
+      <div class="flex">
+
+         <?php if ($fetch_product['is_sale'] == 1){ ?>
+
+            <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:green; padding:20px 0px"> $<?=$fetch_product['price_discount'];?></ins> </span></div>
+
+         <?php } else { ?>
+
+            <div class="name" style="color:green;">$<?= $fetch_product['price']; ?></div> <?php } ?>
+
+         <?php if ($fetch_product['category_id'] != '1'){?>
+
+            <input type="number" name="quantity" class="qty" min="1" max="99" value="1">
+
+         <?php } else { ?>
+            <input type="hidden" name="quantity" value="1">
+         <?php } ?> 
+
+      </div>
+      <button type="submit" class="btn" name="addTOcart">Add To Cart</button>
    </form>
    <?php
       }
@@ -224,7 +240,7 @@ var swiper = new Swiper(".home-slider", {
 });
 
  var swiper = new Swiper(".category-slider", {
-   loop:false,
+   loop:true,
    spaceBetween: 20,
    pagination: {
       el: ".swiper-pagination",
@@ -235,13 +251,13 @@ var swiper = new Swiper(".home-slider", {
          slidesPerView: 2,
        },
       650: {
-        slidesPerView:3,
+        slidesPerView: 3,
       },
       768: {
         slidesPerView: 4,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
    },
 });
