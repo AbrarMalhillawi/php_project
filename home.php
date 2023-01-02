@@ -233,7 +233,7 @@ var swiper = new Swiper(".home-slider", {
 });
 
  var swiper = new Swiper(".category-slider", {
-   loop:true,
+   loop:false,
    spaceBetween: 20,
    pagination: {
       el: ".swiper-pagination",
@@ -250,7 +250,7 @@ var swiper = new Swiper(".home-slider", {
         slidesPerView: 4,
       },
       1024: {
-        slidesPerView: 5,
+        slidesPerView: 4,
       },
    },
 });

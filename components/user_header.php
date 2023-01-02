@@ -15,7 +15,7 @@
 
    <section class="flex">
 
-      <a href="home.php" class="logo"><img  src="uploaded_img/logo1.png" alt="0"></a>
+   <a href="home.php" class="logo"><img src="uploaded_img/logo1.png" style="border-radius: 50%;" alt="0"></a>
 
       <nav class="navbar">
          <a href="home.php">Home</a>
