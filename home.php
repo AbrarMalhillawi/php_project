@@ -68,61 +68,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
    </div>
 
 
-
-   <div class="swiper-slide slide">
-      <div class="content">
-        <h3>Latest Resin Arts</h3>
-        <h2>upto 50% off</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/resin1.png" alt="">
-      </div>
-   </div>
-
-   <div class="swiper-slide slide">
-         
-         <div class="content">
-            <h3>Latest String Arts</h3>
-            <h2>upto 50% off</h2>
-            <a href="shop.php" class="btn">shop now</a>
          </div>
-         <div class="image">
-            <img src="images/string1.png" alt="">
-         </div>
+
+         <div class="swiper-pagination"></div>
+
       </div>
 
-
-      <div class="swiper-slide slide">
-        
-         <div class="content">
-            <h3>Latest Quilling Art</h3>
-            <h2>upto 30% off</h2>
-            <a href="shop.php" class="btn">shop now</a>
-         </div>
-         <div class="image">
-            <img src="images/qulling3.png" alt="">
-         </div>
-      </div>
-
-      <div class="swiper-slide slide">
-      <div class="content">
-        <h3>Latest Acrylic Arts</h3>
-        <h2>upto 10% off</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/acrylic1.png" alt="">
-      </div>
-   </div>
-
-   </div>
-
-      <div class="swiper-pagination"></div>
-
-   </div>
-
-</section>
+   </section>
 
 </div>
 
@@ -160,6 +112,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
    </div>
 
+
    <div class="swiper-pagination"></div>
 
    </div>
@@ -170,7 +123,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
 <section class="home-products">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading">Sales Product</h1>
 
    <div class="swiper products-slider">
 
@@ -229,6 +182,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
          <?php if ($fetch_product['category_id'] != '9'){?>
 
+
             <input type="number" name="quantity" class="qty" min="1" max="99" value="1">
 
          <?php } else { ?>
@@ -279,7 +233,7 @@ var swiper = new Swiper(".home-slider", {
 });
 
  var swiper = new Swiper(".category-slider", {
-   loop:false,
+   loop:true,
    spaceBetween: 20,
    pagination: {
       el: ".swiper-pagination",
@@ -296,7 +250,7 @@ var swiper = new Swiper(".home-slider", {
         slidesPerView: 4,
       },
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
    },
 });
