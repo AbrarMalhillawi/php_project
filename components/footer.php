@@ -20,8 +20,7 @@
 
       <div class="box">
          <h3>contact us</h3>
-         <a href="tel:1234567890"><i class="fas fa-phone"></i> +123 456 7899</a>
-         <a href="tel:11122233333"><i class="fas fa-phone" ></i> +111 222 3333</a>
+         <a href="tel:1234567890"><i class="fas fa-phone"></i>07-7807-9497</a>
          <a href="mailto:shaikh@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Art Hand Craft@gmail.com</a>
          <a href="https://www.google.com/myplace" target="_blank"><i class="fas fa-map-marker-alt"></i> Aqaba, Jordan - 123456 </a>
       </div>
