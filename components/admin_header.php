@@ -39,6 +39,7 @@
          ?>
          <p><?= $fetch_profile['name']; ?></p>
          <a href="../admin/update_profile.php" class="btn">update profile</a>
+         <a href="../admin/add_new_admin.php" class="option-btn">Add New Admin</a>
          <a href="../components/admin_logout.php" class="delete-btn" onclick="return confirm('logout from the website?');">logout</a> 
       </div>
 

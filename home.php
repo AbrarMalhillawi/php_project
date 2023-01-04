@@ -56,16 +56,37 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
          <div class="swiper-wrapper">
 
    <!-- بداية كود السلايدر لعرض الصور  -->
-   <div class="swiper-slide slide" class="pic">
-      <div class="content">
-        <h1>Welcome In Art Hand Craft Website</h1>
-        <h2>Creativity Without Limits</h2>
-        <a href="shop.php" class="btn">shop now</a>
-      </div>
-      <div class="image">
-        <img src="images/home-img-1.png" alt="">
-      </div>
-   </div>
+            <div class="swiper-slide slide" class="pic">
+               <div class="content">
+               <h1>Welcome In Art Hand Craft Website</h1>
+               <h2>Creativity Without Limits</h2>
+               <a href="shop.php" class="btn">shop now</a>
+               </div>
+               <div class="image">
+               <img src="images/home-img-1.png" alt="">
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="./images/Botticelli-Map-of-the-Hell.jpg" alt="">
+               </div>
+               <div class="content">
+                  <span style="font-size: 25px;">Botticelli-Map-of-the-Hell</ style="font-size: 25px;">
+                  <h3>Rare Arts</h3>
+                  <a href="https://www.florenceinferno.com/the-map-of-hell/" class="btn">Read More</a>
+               </div>
+            </div>
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="https://d3rf6j5nx5r04a.cloudfront.net/t_YSCw1zT1oBClXYmDqTI9VIp2c=/1120x0/product/9/3/4bf1ce5c2a3543dead841ea1cdd0ef06_opt.jpg" alt="">
+               </div>
+               <div class="content">
+                  <span style="font-size: 25px;">Glowing-Sunset</span>
+                  <h3>Popular Arts</h3>
+                  <a href="https://www.artfinder.com/product/glowing-sunset-221205-sunset-landscape-with-field-trees/" class="btn">Shop from outside</a>
+               </div>
+            </div>
 
 
          </div>
