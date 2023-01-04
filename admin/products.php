@@ -89,14 +89,20 @@ if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
 
 // هون بدي امسح الصورة تبعت المنتج الي كبسة على الديليت تبعته
-   $delete_product_image = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+   $delete_product_image = $conn->prepare("SELECT * FROM `products` WHERE product_id = ?");
    $delete_product_image->execute([$delete_id]);
+
    $fetch_delete_image = $delete_product_image->fetch(PDO::FETCH_ASSOC);
+
+   
+
    unlink('../uploaded_img/'.$fetch_delete_image['image']);
 
 // هون بدي امسح المنتج كامل و بعدين اقله انقلني على صفحة المنتجات عشان ما اضطر اعمل ريفريش للصفحة لما احذف منتج
-   $delete_product = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+
+   $delete_product = $conn->prepare("DELETE FROM `products` WHERE product_id = ?");
    $delete_product->execute([$delete_id]);
+
    header('location:products.php');
 }
 
@@ -197,6 +203,7 @@ if(isset($_GET['delete'])){
       <div class="name"><?= $fetch_products['name']; ?></div>
 
 
+
       <?php if ($fetch_products['is_sale'] == 1){ ?>
       <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_products['price']; ?></del><ins> $<?=$fetch_products['price_discount'];?></ins> </span></div>
       <?php } else { ?>
@@ -216,11 +223,7 @@ if(isset($_GET['delete'])){
             ?>
                         <div class="details"><span>Category : <?= $fetch_product_category['category_name']; ?></span>
       </div>
-            <?php 
-                        }
-                     }
-                  }
-            ?>
+            <?php } } } ?>
 
       <div class="flex-btn">
          <!-- بدي اعمل هسا كبستين او رابطين عشان المسح و التعديل و بدي ابعث الايي ديه مع الروابط تبعت هاي الكبسات عشان  -->         

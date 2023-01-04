@@ -54,7 +54,7 @@ if(isset($_GET['delete'])){
    unlink('../uploaded_img/'.$fetch_delete_image['image_01']);
    $delete_category = $conn->prepare("DELETE FROM `category` WHERE category_id = ?");
    $delete_category->execute([$delete_id]);
-   $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE pid = ?");
+   $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE product_id = ?");
    $delete_cart->execute([$delete_id]);
    header('location:category.php');
 }

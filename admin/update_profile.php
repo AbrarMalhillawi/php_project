@@ -10,6 +10,8 @@ if(!isset($admin_id)){
    header('location:admin_login.php');
 }
 
+
+
 if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
@@ -18,8 +20,13 @@ if(isset($_POST['submit'])){
    $update_profile_name = $conn->prepare("UPDATE `admins` SET name = ? WHERE id = ?");
    $update_profile_name->execute([$name, $admin_id]);
 
+   
+
    $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+   
    $prev_pass = $_POST['prev_pass'];
+
+
    $old_pass = sha1($_POST['old_pass']);
    $old_pass = filter_var($old_pass, FILTER_SANITIZE_STRING);
    $new_pass = sha1($_POST['new_pass']);
@@ -68,8 +75,11 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>update profile</h3>
-      <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>">
+
+      <!-- <input type="hidden" name="prev_pass" value="<?= $fetch_profile['password']; ?>"> -->
+
       <input type="text" name="name" value="<?= $fetch_profile['name']; ?>" required placeholder="enter your username" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+
       <input type="password" name="old_pass" placeholder="enter old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="new_pass" placeholder="enter new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="confirm_pass" placeholder="confirm new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
