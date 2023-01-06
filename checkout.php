@@ -128,7 +128,7 @@ if(isset($_POST['order'])){
          </div>
       </div>
       <input type="hidden" name="quantity" value="<?= $total_quantity ?>">
-      <input type="submit" name="order" class="btn <?= ($total_price > 1)?'':'disabled'; ?>" value="place order">
+      <input  type="submit" name="order" class="btn <?= ($total_price > 1)?'':'disabled'; ?>" value="place order" style="background-color:#67022f;">
 
    </form>
 
