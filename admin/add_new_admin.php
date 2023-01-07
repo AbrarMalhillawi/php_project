@@ -22,18 +22,6 @@ if(isset($_POST['submit'])){
    $select_admin = $conn->prepare("SELECT * FROM `admins` WHERE name = ?");
    $select_admin->execute([$name]);
 
-   if($select_admin->rowCount() > 0){
-      $message[] = 'username already exist!';
-   }else{
-      if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
-      }else{
-         $insert_admin = $conn->prepare("INSERT INTO `admins`(name, password) VALUES(?,?)");
-         $insert_admin->execute([$name, $cpass]);
-         $message[] = 'new admin registered successfully!';
-      }
-   }
-
 }
 
 ?>
@@ -44,7 +32,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>register admin</title>
+   <title>Art Hand Kraft</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
