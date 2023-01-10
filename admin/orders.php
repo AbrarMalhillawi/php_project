@@ -49,11 +49,15 @@ if(!isset($admin_id)){
     <link href="../css/dashboardstyle.css" rel="stylesheet">
 
     <style>
-        :root {
+        <?php include("../css/dashboardstyle.css") ?>
+        /* :root {
             --primary: #eb8f16;
             --secondary: #000000;
             --light: #6C7293;
             --dark: #000000;
+        } */
+        table {
+            color :#fff !important;
         }
         .fa-bars:before {
             content: "\f0c9";
@@ -72,9 +76,21 @@ if(!isset($admin_id)){
             width: 250px;
             height: 100vh;
             overflow-y: auto;
-            background: #0f1116;
+            background: #cf7b7b;
             transition: 0.5s;
             z-index: 999;
+        }
+        input {
+            background-color: #fff !important;
+        }
+        label {
+            color: #fff !important;
+        }
+        .bg-secondary {
+            background-color: #67022f !important;
+        }
+        .nav-link{
+            color: #fff !important;
         }
     </style>
 </head>
@@ -89,7 +105,7 @@ if(!isset($admin_id)){
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                    <img src="../uploaded_img/logo1.png" style="border-radius: 50%;" width="100px" height="100px" alt="0">
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="ms-3">
