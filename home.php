@@ -10,6 +10,18 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
+if(isset($_SESSION['cart'])){
+   
+} else {
+   $_SESSION['cart'] = [];
+}
+
+if(isset($_SESSION['fav'])){
+   
+} else {
+   $_SESSION['fav'] = [];
+}
+
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
    $product_id = $_POST['product_id'];
    $product_name = $_POST['name'];
@@ -30,10 +42,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
       }
    };
    if($flag==true){
+      if($user_id > 0){
       $send_to_cart = $conn->prepare("INSERT INTO `cart` (user_id , product_id , name , price , image , quantity)
                                     VALUES (? , ? , ? , ?, ? , ?)"); 
       $send_to_cart->execute([$user_id , $product_id , $product_name , $product_price, $product_image, $product_quantity]);
+
+   }else {
+      $array_cart = [$product_id , $product_name , $product_price, $product_image, $product_quantity];
+      array_push($_SESSION['cart'], $array_cart);
+      // echo'<pre>';
+      // print_r($_SESSION['cart']);
+      // echo'</pre>';
    }
+}
 }
 
 
@@ -45,7 +66,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 if(isset($_POST['add_to_wishlist'])){
 
    if($user_id == ''){
-      header('location:user_login.php');
+
+      $flag = true;
+      $pid = $_POST['product_id'];
+
+      foreach($_SESSION['fav'] as $id){
+         if (in_array($pid,$id)){
+            $flag = false;
+            break;
+         }
+      };
+      if($flag==true){
+         $array_fav = [$pid];
+         array_push($_SESSION['fav'], $array_fav);
+         // echo'<pre>';
+         // print_r($_SESSION['fav']);
+         // echo'</pre>';
+      }
+
    }else{
 
       $pid = $_POST['product_id'];
