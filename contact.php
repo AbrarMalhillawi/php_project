@@ -43,7 +43,7 @@ include("css/style.css");
    <div class="row">
 
       <div class="image">
-         <img src="images/contactus.png" alt="imge-about">
+         <img src="images/contact.png" alt="imge-about">
       </div>
 
       <div class="content">
@@ -66,7 +66,7 @@ include("css/style.css");
    <div class="swiper-wrapper">
 
       <div class="swiper-slide slide">
-         <img src="images/p1.png" alt="">
+         <img src="images/pp1.png" alt="">
          <h3>Sales</h3>
          <p>If there are problems related to the sales department, please contact us by email.
 We will respond back to you as soon as possible.<br>
@@ -76,7 +76,7 @@ We will respond back to you as soon as possible.<br>
       </div>
 
       <div class="swiper-slide slide">
-         <img src="images/p2.png" alt="">
+         <img src="images/pp2.png" alt="">
          <h3>Complaints</h3>
          <p>If there are complaints, please contact us by email. We are happy to serve you.
 We will respond back to you as soon as possible.
@@ -86,7 +86,7 @@ We will respond back to you as soon as possible.
       </div>
 
       <div class="swiper-slide slide">
-         <img src="images/p3.png" alt="">
+         <img src="images/pp3.png" alt="">
          <h3>Marketing</h3>
          <p>If  have talent or have creative artistic handicrafts, please contact to marketing by email.
 We will respond back to you as soon as possible.

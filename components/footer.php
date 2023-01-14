@@ -1,4 +1,4 @@
-<footer class="footer" style="background-color:black;"> 
+<footer class="footer" style="background-color: rgb(0, 0, 69) !important;"> 
 
    <section class="grid">
 

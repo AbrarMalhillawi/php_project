@@ -45,7 +45,7 @@ include("css/style.css");
    <div class="row">
 
       <div class="image">
-         <img src="images/about.png" alt="imge-about">
+         <img src="images/about0.png" alt="imge-about">
       </div>
 
       <div class="content">
