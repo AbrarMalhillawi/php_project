@@ -856,7 +856,7 @@ element.style {
 }
 
 .cart-total p span{
-   color:#67022f;
+   color:rgb(0, 0, 69) !important;
 }
 
 .display-orders{

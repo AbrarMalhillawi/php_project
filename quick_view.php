@@ -95,11 +95,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
             <div class="flex">
             <?php if ($fetch_product['is_sale'] == 1){ ?>
 
-               <div class="price" style="padding:7px 0px"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:#67022f;"> $<?=$fetch_product['price_discount'];?></ins> </span></div>
+               <div class="price" style="padding:7px 0px"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:rgb(0, 0, 69) !important;"> $<?=$fetch_product['price_discount'];?></ins> </span></div>
 
                <?php } else { ?>
 
-               <div class="name" style="color:green; padding:20px 0px">$<?= $fetch_product['price']; ?></div> <?php } ?>
+               <div class="name" style="color:rgb(0, 0, 69) !important; padding:20px 0px">$<?= $fetch_product['price']; ?></div> <?php } ?>
 
                <?php if (($fetch_product['store']-$fetch_product['sold']) != '1'){?>
 
@@ -144,7 +144,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
                 $stmt = $conn->prepare($query);
                 $stmt->execute([$pid]); ?>
 
-                  <section style="background-color: #d7cebe;">
+                  <section style="background-color:rgb(0, 0, 69) !important;">
 
   <div class="container my-5 py-5">
     <div class="row d-flex justify-content-center">

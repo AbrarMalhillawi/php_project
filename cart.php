@@ -92,7 +92,7 @@ include("css/style.css");
 
          <?php $x = $fetch_product['price_discount']; } else { ?>
 
-         <div class="name" style="color:green; padding:20px 0px">$<?= $fetch_product['price']; ?></div> <?php  $x = $fetch_product['price']; } ?>
+         <div class="name" style="color:rgb(0, 0, 69) !important; padding:20px 0px">$<?= $fetch_product['price']; ?></div> <?php  $x = $fetch_product['price']; } ?>
 
          <?php if ($fetch_product['category_id'] != '9'){?>
 
