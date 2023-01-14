@@ -39,8 +39,15 @@
             $total_cart_counts = $count_cart_items->rowCount();
          ?>
          <div id="menu-btn" class="fas fa-bars"></div>
-         <a href="wishlist.php"><i class="fas fa-heart"></i><span>(<?= $total_wishlist_counts; ?>)</span></a>
-         <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_counts; ?>)</span></a>
+         <?php
+            if(isset($_SESSION['user_id'])){ ?>
+               <a href="wishlist.php"><i class="fas fa-heart"></i><span>(<?= $total_wishlist_counts; ?>)</span></a>
+               <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_cart_counts; ?>)</span></a>
+            <?php
+            }else{ ?>
+               <a href="wishlist.php"><i class="fas fa-heart"></i><span>(<?= count($_SESSION['fav']); ?>)</span></a>
+               <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(<?= count($_SESSION['cart']); ?>)</span></a>
+            <?php }; ?>
          
          <div id="user-btn" class="fas fa-user"></div>
          <span id="nameeeeeee" style="cursor:default;"> <?php if(!empty($_SESSION['email'])){  echo strtoupper($_SESSION['name']);}  ?></span>
